@@ -1,5 +1,5 @@
 // declaramos una funcion con el mismo nombre "formEuroToDollar"
-const fromEuroToDollar = function(valueInEuro){
+const fromEuroToDollar = function(valueInEuro) {
     // convertimos el valor a dolares
     let valueInDollar = valueInEuro * 1.2;
     // retornamos el valor
@@ -7,36 +7,39 @@ const fromEuroToDollar = function(valueInEuro){
 }
 
 // declaramos una funcion con el mismo nombre "formEuroToDollar"
-const fromDollarToYen = function(valueInDollar){
+const fromDollarToYen = function(valueInDollar) {
     // convertimos el valor a dolares
-    let valueInEuro = valueInDollar * 1.2;
-    let valueInYen = valueInEuro * 127.9;
+    let valueInYen = valueInDollar * 127.9 / 1.2;
     // retornamos el valor
-    return valueInYen;
+    return parseFloat(valueInYen.toFixed(1));
 }
 
 // declaramos una funcion con el mismo nombre "formEuroToDollar"
-const fromYenToPound = function(valueInDollar){
+const fromYenToPound = function(valueInYen) {
     // convertimos el valor a dolares
-    let valueInEuro = valueInYen * 127.9;
-    let valueInPound = valueInEuro * 0.8;
+    let valueInPound = valueInYen * 0.8 / 127.9;
     // retornamos el valor
-    return valueInPound;
+    return parseFloat(valueInPound.toFixed(1));
 }
 
 
 
 // // esta es mi funcion que suma dos numeros
-const sum = (a,b) => {
+const sum = (a, b) => {
     return a + b
 }
 
 // // solo un registro en consola para nosotros.
-console.log(sum(7,3))
+console.log(sum(7, 3))
 
 // // exporta la función para usarla en otros archivos 
 // // (similar a la palabra clave `export` cuando se usa webpack)
-module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound };
+module.exports = {
+    sum,
+    fromEuroToDollar,
+    fromDollarToYen,
+    fromYenToPound
+};
 
 
 
